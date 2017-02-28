@@ -1,0 +1,10 @@
+name = First
+description = A first module
+package = Drupal 7 Development
+core = 7.x
+version = 7.x-0.1
+
+files[] = first.module
+
+;dependencies[] = autoload
+php 7.0.16
