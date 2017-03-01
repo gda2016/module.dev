@@ -1,6 +1,6 @@
 module.dev
 #  [Drupal 7 Module Development](https://www.safaribooksonline.com/library/view/drupal-7-module/9781849511162/)
-## by Ken Rickard, John Wilkins, Larry Garfield, Matt Butcher, Greg Dunlap, Matt Farina
+### by Ken Rickard, John Wilkins, Larry Garfield, Matt Butcher, Greg Dunlap, Matt Farina
 Publisher: Packt Publishing
 
 Release Date: December 2010
@@ -10,6 +10,7 @@ ISBN: 9781849511162
 Topics: Drupal
 
 > ## Chapter 2. Creating Your First Module
+### Creating new module
 
 * Starting a new module
 * Creating `.info` files to provide Drupal with module information
@@ -26,6 +27,10 @@ We are going to divide this task of building a new module into the three parts:
 * Create a new module folder and module files
 * Work with the Block Subsystem
 * Write automated tests using the SimpleTest framework included in Drupal
+
+#### Creating the module directory
+
+
 
 __Writing the .info file__
 > sites/all/module/__cusrom/first.info
@@ -126,6 +131,14 @@ There are more things that can be done with t(), format_plural(), http://api.dru
 
 String Overrides module at http://drupal.org/project/stringoverrides
 
+### Working with the Block API
+
+__Note__
+_[The entire Block API is documented in the official Drupal 7 API documentation, and even includes an example module:](http://api.drupal.org/api/drupal/developer--examples--block_example.module/7.)_
+
+__The block info hook__
+
+__The block view hook__
 
 
 

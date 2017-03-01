@@ -1,0 +1,6 @@
+[Wed Mar 01 14:20:52.364818 2017] [:error] [pid 15671] [client 127.0.0.1:60081] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /web/dr/module.dev/www/sites/all/modules/__custom/test.php on line 3
+[Wed Mar 01 14:21:17.482636 2017] [autoindex:error] [pid 15558] [client 127.0.0.1:60090] AH01276: Cannot serve directory /web/dr/module.dev/www/sites/: No matching DirectoryIndex (*.php,*.html,index.php) found, and server-generated directory index forbidden by Options directive
+[Wed Mar 01 14:21:45.896368 2017] [:error] [pid 3068] [client 127.0.0.1:60099] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /web/dr/module.dev/www/sites/all/modules/__custom/test.php on line 3
+[Wed Mar 01 14:22:16.606823 2017] [:error] [pid 15350] [client 127.0.0.1:60108] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /web/dr/module.dev/www/sites/all/modules/__custom/test.php on line 3, referer: http://module.dev/?q=user/logout
+[Wed Mar 01 14:24:06.337594 2017] [:error] [pid 14016] [client 127.0.0.1:60122] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /web/dr/module.dev/www/sites/all/modules/__custom/test.php on line 3
+[Wed Mar 01 14:24:17.887970 2017] [:error] [pid 15558] [client 127.0.0.1:60130] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /web/dr/module.dev/www/sites/all/modules/__custom/test.php on line 3
