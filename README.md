@@ -1,5 +1,5 @@
 module.dev
-# [Drupal 7 Module Development] (https://www.safaribooksonline.com/library/view/drupal-7-module/9781849511162/)
+#  [Drupal 7 Module Development](https://www.safaribooksonline.com/library/view/drupal-7-module/9781849511162/)
 ## by Ken Rickard, John Wilkins, Larry Garfield, Matt Butcher, Greg Dunlap, Matt Farina
 Publisher: Packt Publishing
 
@@ -27,6 +27,9 @@ We are going to divide this task of building a new module into the three parts:
 * Work with the Block Subsystem
 * Write automated tests using the SimpleTest framework included in Drupal
 
+__Writing the .info file__
+> sites/all/module/__cusrom/first.info
+
 __Note__
 _Agile software development is a particular methodology designed to help teams of developers effectively and efficiently build software. While Drupal itself has not been developed using an agile process, it does facilitate many of the agile practices. To learn more about agile, visit http://agilemanifesto.org/ . This approach is called __Test-driven Development (TDD)__, and is a justly popular methodology._
 
@@ -46,3 +49,84 @@ _JavaScript, CSS, image files, and PHP files (like templates) that do not contai
 
 __Note__
 _Drupal does not contain a directive to indicate that another module is recommended or is optional. It is the task of the developer to appropriately document this fact and make it known. There is currently no recommended best practice to provide such information._
+
+__Creating a module file__
+> sites/all/module/__cusrom/first.module
+
+__SOURCE CODE STANDARDS__
+> http://drupal.org/coding-standards
+
+__Indenting:__
+_All PHP and JavaScript files use two spaces to indent. Tabs are never used for code formatting._
+
+__Tip__
+__Doc blocks in action: api.drupal.org__
+_Drupal's doc blocks are used to generate the definitive source of Drupal API documentation at http://api.drupal.org._
+
+Doc declaration
+```
+/**
+* @file
+* A module exemplifying Drupal coding practices and APIs.
+*
+* This module provides a block that lists all of the
+* installed modules. It illustrates coding standards,
+* practices, and API use for Drupal 7.
+*/
+```
+Function declaration
+```
+/**
+* Implements hook_help().
+*/
+```
+__Implements hook_help().__
+_Each hook has its own parameters, and all core Drupal hooks are documented at http://api.drupal.org._
+
+_Drupal 8.2 [Events](https://api.drupal.org/api/drupal/core%21core.api.php/group/events/8.2.x) more >>> [The EventDispatcher Component](http://symfony.com/doc/current/components/event_dispatcher.html)_
+
+__THE T() FUNCTION AND TRANSLATIONS__
+_`t()` function is responsible for translating strings from one language into other._
+* ! It cannot do anything with lines like this, though:
+```
+// Incorrect
+$variable = 'This is a string';
+t($variable);
+
+// Correct
+t('This is my string');
+```
+* The `t()` function should always be given a literal string for its first argument
+* The t() function provides an alternate, and more secure, method for replacing placeholders in text with a value. 
+```$xslt
+// No Secure
+print "Welcome, $username.";
+```
+_This code leaves open the possibility that the value of `$username` contains data that will break the HTML in the output — or worse, that it will open an avenue for a malicious user to inject JavaScript or other code into the output._
+```
+// Secureted
+$values = array('@user' => $username);
+print t('Welcome, @user', $values);
+```
+_If the placeholder begins with @, then before it inserts the value, Drupal sanitizes the value using its internal check_plain() function_
+
+_If you are sure that the string doesn't contain any dangerous information, you can use a different symbol to begin your placeholder: the exclamation mark (!).
+```$xslt
+$values = array('!url' => 'http://example.com');
+print t('The website can be found at !url', $values);
+```
+_Finally, there is a third placeholder decorator: the percent sign (%) tells Drupal to escape the code and to mark it as emphasized_
+```$xslt
+$values = array('%color' => 'blue');
+print t('My favorite color is %color.', $values);
+```
+_printing of the string My favorite color is <em>blue</em>._
+
+There are more things that can be done with t(), format_plural(), http://api.drupal.org/api/function/t/7
+
+String Overrides module at http://drupal.org/project/stringoverrides
+
+
+
+
+
